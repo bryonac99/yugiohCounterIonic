@@ -1,0 +1,33 @@
+<div class="calculator" >
+  <ion-item style="display: flex;align-items: center;margin: 0 auto;">
+    <ion-label style="font-size: 35px;"  >{{result}}</ion-label>
+  </ion-item>
+  <div class="buttons">
+    <ion-row>
+      <ion-col *ngFor="let number of num1" >
+        <ion-button (click)="appendToResult(number)" expand="full">{{number}}</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let number of num2" >
+        <ion-button (click)="appendToResult(number)" expand="full">{{number}}</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let number of num3" >
+        <ion-button (click)="appendToResult(number)" expand="full">{{number}}</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="cancelResult()" expand="full"><</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="appendToResult('0')" expand="full">0</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full">=</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

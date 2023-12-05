@@ -1,0 +1,8 @@
+{
+  "name": "LifeCounterYugi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "35a72b06"
+}

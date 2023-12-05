@@ -1,0 +1,27 @@
+.buttons {
+    
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+
+  }
+
+ion-row {
+    justify-content: space-between;
+}
+
+.result{
+    display: flex;
+    align-items: center;
+    margin: "0 auto"
+}
+
+.play-btn {
+    display: flex;
+  flex-direction: column-reverse;
+}
+
+ion-button {
+    width:10vh;
+    height: 6vh;
+}

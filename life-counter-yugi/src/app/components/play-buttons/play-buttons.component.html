@@ -1,0 +1,29 @@
+<div [class]="rotate ? 'play-btn' : ''" >
+  <div class="buttons">
+    <ion-row>
+      <ion-col>
+        <ion-button>-</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button>/</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button>+</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top:10px">
+      <ion-col>
+        <ion-button style="margin-left:40%">d</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button style="margin-right:40%">m</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="result">
+    <ion-item style="display: flex;align-items: center;margin: 0 auto;">
+      <ion-label style="font-size: 40px;">{{result}}</ion-label>
+    </ion-item>
+  </div>
+</div>

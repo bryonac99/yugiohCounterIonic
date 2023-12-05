@@ -1,0 +1,16 @@
+
+<ion-header [translucent]="true">
+  <app-header-toolbar [title]="folder"></app-header-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="folder === 'home'">
+      <div class="btnContainer">
+        <ion-item>
+          <ion-title>Yu-gi-oh! Life Counter</ion-title>
+        </ion-item>
+        <ion-button (click)="startNewMatch()" style="width:150px;height: 80px;margin-top:10%" color="secondary">New match</ion-button>   
+      </div>
+    </div>
+</ion-content>

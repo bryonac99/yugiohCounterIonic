@@ -3,21 +3,25 @@
   <div  [class]="rotate ? 'buttons-reverse' : 'buttons'"  *ngIf="!calculatorOpened">
     <ion-row>
       <ion-col>
-        <ion-button (click)="minusClick()">-</ion-button>
+        <ion-button shape="round" (click)="minusClick()">
+          <ion-icon name="remove-outline"></ion-icon>
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="halfPoints()">/</ion-button>
+        <ion-button shape="round" (click)="halfPoints()">/</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)="plusClick()">+</ion-button>
+        <ion-button shape="round" (click)="plusClick()">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
       </ion-col>
     </ion-row>
     <ion-row style="margin-top:10px">
       <ion-col>
-        <ion-button style="margin-left:40%">d</ion-button>
+        <ion-button shape="round" style="margin-left:40%">d</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button style="margin-right:40%">m</ion-button>
+        <ion-button shape="round" style="margin-right:40%">m</ion-button>
       </ion-col>
     </ion-row>
   </div>

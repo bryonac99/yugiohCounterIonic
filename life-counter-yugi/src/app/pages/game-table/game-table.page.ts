@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class GameTablePage implements OnInit {
 
   rotate: boolean = true;
+  defaultScore: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  resetScore() {
+    this.defaultScore = !this.defaultScore;
   }
 
 }

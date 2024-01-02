@@ -3,10 +3,22 @@
   <app-header-toolbar [title]="'gameTable'"></app-header-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content mode="md" [fullscreen]="true">
+  <div style="height: 50%;">
+    <div style="margin-top:10%">
+      <app-play-buttons 
+        [defaultScore]="defaultScore">
+      </app-play-buttons>
+    </div>
+  </div>
+  <div style="margin-top:-13%">
+    <app-play-buttons [defaultScore]="defaultScore" [rotate]="rotate">
+    </app-play-buttons>
+  </div>
 
-  <app-play-buttons></app-play-buttons>
-  <app-play-buttons [rotate]="rotate"></app-play-buttons>
-
-
+  <div class="footer">
+    <ion-button (click)="resetScore()">
+      <ion-icon name="refresh-outline"></ion-icon>
+    </ion-button>
+  </div>
 </ion-content>

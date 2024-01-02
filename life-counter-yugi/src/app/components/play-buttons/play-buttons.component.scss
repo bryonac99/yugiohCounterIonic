@@ -1,9 +1,13 @@
 .buttons {
-    
     text-align: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10%;
+  }
 
+  .buttons-reverse {
+    text-align: center;
+    width: 100%;
+    margin-top: 0px;
   }
 
 ion-row {
@@ -18,6 +22,11 @@ ion-row {
 
 .play-btn {
     display: flex;
+    flex-direction: column;
+}
+
+.play-btn-reverse {
+  display: flex;
   flex-direction: column-reverse;
 }
 

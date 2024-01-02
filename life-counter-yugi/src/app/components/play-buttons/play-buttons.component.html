@@ -1,14 +1,15 @@
-<div [class]="rotate ? 'play-btn' : ''" >
-  <div class="buttons">
+<div [class]="rotate ? 'play-btn-reverse' : 'play-btn'" >
+
+  <div  [class]="rotate ? 'buttons-reverse' : 'buttons'"  *ngIf="!calculatorOpened">
     <ion-row>
       <ion-col>
-        <ion-button>-</ion-button>
+        <ion-button (click)="minusClick()">-</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>/</ion-button>
+        <ion-button (click)="halfPoints()">/</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button>+</ion-button>
+        <ion-button (click)="plusClick()">+</ion-button>
       </ion-col>
     </ion-row>
     <ion-row style="margin-top:10px">
@@ -21,9 +22,20 @@
     </ion-row>
   </div>
 
-  <div class="result">
-    <ion-item style="display: flex;align-items: center;margin: 0 auto;">
-      <ion-label style="font-size: 40px;">{{result}}</ion-label>
+
+  <app-calculator 
+    *ngIf="calculatorOpened"
+    [oldResult]="result"
+    [rotate]="rotate"
+    [operation]="operation"
+    (onChangeResult)="resultChanged($event)"
+    (onBack)="calculatorClosed($event)">
+  </app-calculator>
+
+  <div class="result" *ngIf="scoreVisible" style="display: flex;justify-content: center;margin-top:20px" [style.margin-bottom]="rotate ? '30px' : ''" [style.margin-top]="!rotate ? '30px' : ''">
+    <ion-item >
+      <ion-label style="font-size: 2em;">{{result}}</ion-label>
     </ion-item>
   </div>
+
 </div>

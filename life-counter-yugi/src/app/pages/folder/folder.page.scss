@@ -30,4 +30,8 @@ ion-menu-button {
 .btnContainer {
   margin-top:5%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

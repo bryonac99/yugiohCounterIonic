@@ -1,6 +1,6 @@
 <div [class]="rotate ? 'play-btn-reverse' : 'play-btn'" >
 
-  <div  [class]="rotate ? 'buttons-reverse' : 'buttons'"  *ngIf="!calculatorOpened">
+  <div  [class]="rotate ? 'buttons-reverse' : 'buttons'" *ngIf="!calculatorOpened && !coinOpened && !coinOpened1 && !diceOpened && !diceOpened1">
     <ion-row>
       <ion-col>
         <ion-button shape="round" (click)="minusClick()">
@@ -8,7 +8,9 @@
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button shape="round" (click)="halfPoints()">/</ion-button>
+        <ion-button shape="round" (click)="halfPoints()">
+          <span style="font-size: large;">/</span>
+        </ion-button>
       </ion-col>
       <ion-col>
         <ion-button shape="round" (click)="plusClick()">
@@ -18,14 +20,53 @@
     </ion-row>
     <ion-row style="margin-top:10px">
       <ion-col>
-        <ion-button shape="round" style="margin-left:40%">d</ion-button>
+        <ion-button shape="round" (click)="coinToss(rotate)" style="margin-left:40%">
+          <ion-icon name="logo-euro"></ion-icon>
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button shape="round" style="margin-right:40%">m</ion-button>
+        <ion-button shape="round" (click)="diceRoll(rotate)" style="margin-right:40%">
+          <ion-icon name="dice-outline"></ion-icon>
+        </ion-button>
       </ion-col>
     </ion-row>
   </div>
 
+  <div *ngIf="coinOpened1" class="coin-container">
+    <ion-button id="coin1" (click)="coinToss(rotate)" shape="round" color="primary" class="coin">
+      <p>{{coin}}</p>
+    </ion-button>
+    <ion-button size="small" (click)="back('coin1')" shape="round">
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div *ngIf="coinOpened" class="coin-container-reverse" >
+    <ion-button id="coin" (click)="coinToss(rotate)" shape="round" color="primary" class="coin">
+      <p>{{coin}}</p>
+    </ion-button>
+    <ion-button size="small" (click)="back('coin')" shape="round">
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div *ngIf="diceOpened1" class="dice-container">
+    <ion-button (click)="diceRoll(rotate)" color="primary" class="dice">
+      <p id="dice1">0</p>
+    </ion-button>
+    <ion-button size="small" (click)="backDice('dice1')" shape="round">
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <div *ngIf="diceOpened" class="dice-container-reverse">
+    <ion-button (click)="diceRoll(rotate)"  color="primary" class="dice">
+      <p id="dice">0</p>
+    </ion-button>
+    <ion-button size="small" (click)="backDice('dice')" shape="round">
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-button>
+  </div> 
 
   <app-calculator 
     *ngIf="calculatorOpened"

@@ -7,10 +7,17 @@
 
   <div *ngIf="folder === 'home'">
       <div class="btnContainer">
-        <ion-item>
-          <ion-title>Yu-gi-oh! Life Counter</ion-title>
+        <ion-item lines="none">
+          <ion-title style="font-size: 1.7em;">Life Counter</ion-title>
         </ion-item>
         <ion-button (click)="startNewMatch()" style="width:150px;height: 80px;margin-top:10%" color="secondary">New match</ion-button>   
       </div>
-    </div>
+  </div>
+
+  
+  <div *ngIf="folder === 'info'">
+      <ion-item style="margin-top:10px">
+        <p>Version 1.0.0 card game life counter</p>
+      </ion-item>
+</div>
 </ion-content>
